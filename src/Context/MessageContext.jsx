@@ -1,9 +1,16 @@
 import { createContext, useState} from "react";
 
-export const MessagesContext = createContext()
+export const MessagesContext = createContext(
+    {
+        messages: [],
+        addNewMessage: (text) => {},
+        handleDeleteMessage: (id_message) => {}
+    }
+)
 
 const MessagesContextProvider = ({children}) => {
-    const [messages, setMessages] = useState([
+    const [messages, setMessages] = useState(
+    [
         {
         emisor: 'YO',
         hora: '23:10',
@@ -31,15 +38,15 @@ const MessagesContextProvider = ({children}) => {
         id: 4,
         texto: 'Estás ahí?',
         status: 'no-recibido'
-        },
+        }
     ])
 
     const handleDeleteMessage = (id_message) => {
         const updatedMessageList = []
         for (const message of messages) {
-        if (message.id !== id_message) {
-            updatedMessageList.push(message)
-        }
+            if (message.id !== id_message) {
+                updatedMessageList.push(message)
+            }
         }
         setMessages(updatedMessageList)
     }
