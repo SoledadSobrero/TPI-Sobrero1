@@ -7,10 +7,6 @@ import ContactContextProvider from './Context/ContactContex.jsx'
 
 createRoot(document.getElementById('root')).render(
     <BrowserRouter>
-        <ContactContextProvider>
-            <MessagesContextProvider>
-                <App />
-            </MessagesContextProvider>
-        </ContactContextProvider>
+        <App />
     </BrowserRouter>
 )

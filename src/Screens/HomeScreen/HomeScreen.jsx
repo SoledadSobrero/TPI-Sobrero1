@@ -1,23 +1,16 @@
 import React from 'react'
-import Chat from '../../Component/Chat/Chat'
-import NewMessageForm from '../../Component/NewMessageform/NewMessageForm'
-import Swal from 'sweetalert2'
+import { Link } from "react-router"
+import './HomeScreen.css'
 
 export default function HomeScreen() {
-    const handleClickAlertButton = () => {
-        Swal.fire({
-          title: 'Error!',
-          text: 'Do you want to continue',
-          icon: 'error',
-          confirmButtonText: 'Cool'
-        })
-    }
-
+    
     return (
       <div>
-        <button onClick={handleClickAlertButton}>Alerta bonita</button>
-        <Chat />
-        <NewMessageForm />
+        <img class='wa-img' src='https://static.whatsapp.net/rsrc.php/v4/y6/r/wa669aeJeom.png' alt='whatsApp-img' />
+        <h1 class='title'>Bienvenido al servicio de WhatsApp Web</h1>
+        <Link class='link' to={"/contacts"}>
+          <button class='button-start'>Usar en la web</button>
+        </Link>
       </div>
     )
 }

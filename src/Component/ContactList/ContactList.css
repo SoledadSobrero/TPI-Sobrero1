@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "DM Sans",sans-serif;
+    box-sizing: border-box;
+}
+
+.contact-list {
+    height: 100vh;
+    overflow-y: auto;
+    background: #fff;
+    border-right: 1px solid #ddd;
+    padding: 1rem 0;
+}
